@@ -1,4 +1,7 @@
 # Lab 1
+#Mahaed Mohamud
+#ECEGR 2220 
+#4/
 
 	.data	# Data declaration section
 
@@ -46,6 +49,9 @@ swap:
 				
 	sw		t2, 0(t1)	
 	sw		t0, 4(t1)	
+	addi            t4, zero, 5    # adding zero +5 and assigns to t4
+	addi            t5, t4, 2      # add t4 + 2 and assign 7 to t5
+	addi            t6, t5, 5      # add t5 + 5 and assign 12 to t6
 	ret		
 
 # END OF PROGRAM

@@ -63,8 +63,7 @@ begin
 		end if;
 	end if;	
 
-    if rising_edge(Clock) then 
-	 if OE = '0' then
+	if OE = '0' then
 		-- This is also for writing data to RAM when Output enable is zero.
 		     if (  (address_Integer >=0)and (address_Integer <= 127))  then 
 				DataOut <= i_ram(address_Integer);
@@ -72,7 +71,6 @@ begin
 			       DataOut <= (others => 'Z');
 		     end if;
 	end if;
-    end if ;
 
  end process RamProc;
 

@@ -63,7 +63,8 @@ begin
 		end if;
 	end if;	
 
-	if OE = '0' then
+    if rising_edge(Clock) then 
+	 if OE = '0' then
 		-- This is also for writing data to RAM when Output enable is zero.
 		     if (  (address_Integer >=0)and (address_Integer <= 127))  then 
 				DataOut <= i_ram(address_Integer);
@@ -71,6 +72,7 @@ begin
 			       DataOut <= (others => 'Z');
 		     end if;
 	end if;
+    end if ;
 
  end process RamProc;
 
@@ -111,15 +113,16 @@ begin
 	with WriteCmd & WriteReg select
 
 			writeout <=
-				"00000001" when "110000",
-				"00000010" when "110001",
-				"00000100" when "110010",
-				"00001000" when "110011",
-				"00010000" when "110100",
-				"00100000" when "110101",
-				"01000000" when "110110",
-				"10000000" when "110111",
+				"00000001" when "101010",
+				"00000010" when "101011",
+				"00000100" when "101100",
+				"00001000" when "101101",
+				"00010000" when "101110",
+				"00100000" when "101111",
+				"01000000" when "110000",
+				"10000000" when "110001",
 				"00000000" when others;
+
 
 -- Note:
 --  Out is active low.

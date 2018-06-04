@@ -113,15 +113,16 @@ begin
 	with WriteCmd & WriteReg select
 
 			writeout <=
-				"00000001" when "110000",
-				"00000010" when "110001",
-				"00000100" when "110010",
-				"00001000" when "110011",
-				"00010000" when "110100",
-				"00100000" when "110101",
-				"01000000" when "110110",
-				"10000000" when "110111",
+				"00000001" when "101010",
+				"00000010" when "101011",
+				"00000100" when "101100",
+				"00001000" when "101101",
+				"00010000" when "101110",
+				"00100000" when "101111",
+				"01000000" when "110000",
+				"10000000" when "110001",
 				"00000000" when others;
+
 
 -- Note:
 --  Out is active low.
@@ -156,28 +157,27 @@ begin
 
 	with ReadReg1 select
 		ReadData1<= 	X"00000000" when "00000",
-				a_zero when "10000",
-				a_one when "10001",
-				a_two when "10010",
-				a_three when "10011",
-				a_four when "10100",
-				a_five when "10101",
-				a_six when "10110",
-				a_seven when "10111",
+				a_zero when "01010",
+				a_one when "01011",
+				a_two when "01100",
+				a_three when "01101",
+				a_four when "01110",
+				a_five when "01111",
+				a_six when "10000",
+				a_seven when "10001",
 				X"00000000" when others;
 
 	with ReadReg2 select
 		ReadData2<= 	X"00000000" when "00000",
-				a_zero when "10000",
-				a_one when "10001",
-				a_two when "10010",
-				a_three when "10011",
-				a_four when "10100",
-				a_five when "10101",
-				a_six when "10110",
-				a_seven when "10111",
+				a_zero when "01010",
+				a_one when "01011",
+				a_two when "01100",
+				a_three when "01101",
+				a_four when "01110",
+				a_five when "01111",
+				a_six when "10000",
+				a_seven when "10001",
 				X"00000000" when others;
-
 end remember;
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -102,7 +102,6 @@ architecture holistic of Processor is
 
 
 	-- Add your code here.
-
 	signal read_register_1: std_logic_vector (4 downto 0); 
 	signal read_register_2: std_logic_vector (4 downto 0);
 

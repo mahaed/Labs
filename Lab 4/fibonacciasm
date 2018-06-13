@@ -19,21 +19,21 @@ main:
 	
 	jal	theFibonaccisequence
 	
-	sw	a0, a, t6       #Stores the value in A. 
+	sw	a0, a, t5       #Stores the value in A. 
 	
 	
 	addi	a2, zero, 10 	# Set it equal to 10 in order to perform Fibonacci(10) in the next function progam, fibonacci sequence. 
 	
 	jal	theFibonaccisequence
 	
-	sw	a0, b, t6         #Stores the value in B . 
+	sw	a0, b, t5         #Stores the value in B . 
 
 
 	addi	a2, zero, 20 	# Set it equal to 20 in order to perform Fibonacci(20) in the next function progam, fibonacci sequence. 
 	
 	jal	theFibonaccisequence
 	
-	sw	a0, c, t6       #Stores the value in C. 
+	sw	a0, c, t5       #Stores the value in C. 
 	 
 	li      a7, 10		#Exit The Program.
 	ecall

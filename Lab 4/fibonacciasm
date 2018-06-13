@@ -57,12 +57,12 @@ theFibonaccisequence:
 	
 	jal 	theFibonaccisequence  #This represents as fibonacci(n-1).
 	
-	add 	s1, zero, a0	# Store the value of n -1 in the register s1. 
+	add 	s1, zero, a0	#Store the value of n -1 in the register s1. 
 	addi 	a2, s0, -2	#Store the value after it was decremented by 2  to store a new value that is two less than previous value
 	
 	jal 	theFibonaccisequence	 #This represents as fibonacci(n-2).
 	
-	add 	a0, a0, s1       	# Store the two function arguments with its parameters which is fibonacci(n-1) + fibonacci (n-1) into this register to save it. 
+	add 	a0, a0, s1       	# Store the two function arguments with its parameters which is fibonacci(n-1) + fibonacci (n-2) into this register to save it. 
 	
 exit:
 				#After it is completed, it will proceed to restore those values back into their respective registers as mentioned. 

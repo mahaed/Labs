@@ -49,13 +49,61 @@ BEGIN
 		-- Wait 100 ns for global reset to finish
 		wait for 100 ns;
 
-		-- Start testing the ALU
-		datain_a <= X"01234567";	-- DataIn in hex
-		datain_b <= X"11223344";
-		control  <= "00000";		-- Control in binary (ADD and ADDI test)
-		wait for 20 ns; 			-- result = 0x124578AB  and zeroOut = 0
+		
 
 		-- Add test cases here to drive the ALU implementation
+
+-- Wait 100 ns for global reset to finish
+		wait for 100 ns;
+
+		-- Start testing the ALU
+		-- Add test cases here to drive the ALU implementation
+
+		---- Comprehensively test the ADDITION  OPeration.
+		datain_a <= X"00000001";	-- DataIn in hex
+		datain_b <= X"01234567";
+		control  <= "00000";		-- Control in binary 
+		wait for 20 ns; 			-- result = 0x1234568  and zeroOut equals 0
+
+		-- Add test cases here to drive the ALU implementation
+
+
+		---- Comprehensively test  the  ADDITION  OPeration.
+		datain_a <= X"00000002";	-- The DataIn in Hexadecimal. DataIn in hex
+		datain_b <= X"00000001";
+		control  <= "00001";		-- The control in binary.
+		wait for 20 ns; 	        -- The result = 0x00000001 and zeroOut equals 0
+
+
+
+		 ---- Comprehensively test  the  SHIFT OPeration.
+		datain_a <= X"11111110";	-- The DataIn in Hexadecimal.
+		datain_b <= X"00000001";
+		control  <= "00111";		-- The control in binary.
+		wait for 20 ns; 		-- The result = 0x88888880 and zeroOut equals 0
+
+
+
+		---- Comprehensively test  the AND OPeration.
+		datain_a <= X"00100000";	-- The DataIn in Hexadecimal.
+		datain_b <= X"00100011";
+		control  <= "00011";		-- The control in binary.
+		wait for 20 ns; 		-- The result  = 0x00100000  and zeroOut equals = 0
+
+
+		---- Comprehensively test  the OR OPeration. 
+		datain_a <= X"10101010";	-- The DataIn in Hexadecimal.
+		datain_b <= X"01010101";
+		control  <= "00101";		-- The control in binary.
+		wait for 20 ns; 		-- The result = 0x11111111 and zeroOut equals 0
+
+
+		---- Comprehensively test  the Data Bypass Operation.
+		datain_a <= X"AAAAAAAA";	-- The DataIn in Hexadecimal.
+		datain_b <= X"01234567";
+		control <="11111";		-- The control in binary.
+		wait for 20 ns;			-- The result equals 0x01234567 and zeroOut equals 0
+
 
 
 		wait; -- will wait forever
